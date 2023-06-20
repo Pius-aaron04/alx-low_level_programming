@@ -14,4 +14,5 @@ int _isalpha(int c)
 	}
 	else if (c <= 64)
 		return (0);
+	return (1);
 }
