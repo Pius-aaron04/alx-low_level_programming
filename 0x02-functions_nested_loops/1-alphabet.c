@@ -12,13 +12,3 @@ void print_alphabet(void)
 	_putchar('\n');
 }
 
-/**
- * main - entry point
- * Return: returns 0 on success
- */
-
-int main(void)
-{
-	print_alphabet();
-	return (0);
-}
