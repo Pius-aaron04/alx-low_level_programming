@@ -3,11 +3,11 @@
  * @c: int type parameter
  * Return: return 1 if c is an alphabet and 0 if c is not
  */
-int _isalpha(int a)
+int _isalpha(int c)
 {
-	if (a >= 65 || a <= 122)
+	if (c >= 65 || c <= 122)
 	{
-		if !(a >= 91 && a <= 96)
+		if (!(c >= 91 && c <= 96))
 			return (1);
 		else
 			return (0);
