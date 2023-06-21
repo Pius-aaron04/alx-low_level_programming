@@ -5,14 +5,16 @@
  */
 int _isalpha(int c)
 {
+	int status;
+
 	if (c >= 65 && c <= 122)
 	{
 		if (!(c >= 91 || c <= 96))
-			return (1);
+			status = 1;
 		else
-			return (0);
+			status = 0;
 	}
 	else if (c <= 64)
-		return (0);
-	return (1);
+		status = 0;
+	return (status);
 }
