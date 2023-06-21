@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * jack_bauer - prints every minute in 24 hours
  * Return: void
@@ -20,21 +21,21 @@ void jack_bauer(void)
 			}
 			else
 			{
-				_putchar('0' + first_digit(hour));
+				_putchar('0' + (hour / 10));
 				_putchar('0' + (hour % 10));
 				_putchar(':');
 			}
-			if (minute < 60)
+			if (minute < 10)
 			{
 				_putchar('0');
 				_putchar('0' + minute);
 			}
 			else
 			{
-				_putchar('0' + first_digit(minute));
+				_putchar('0' + (minute / 10));
 				_putchar('0' + (minute % 10));
 			}
+			_putchar('\n');
 		}
-		_putchar('\n');
 	}
 }
