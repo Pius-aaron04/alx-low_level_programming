@@ -4,10 +4,9 @@
 /**
  * print_to_98 - prints numbers from n to 98
  * @n: int parameter n
- * Return: returns 0 on success
  */
 
-int print_to_98(int n)
+void print_to_98(int n)
 {
 	if (n <= 98)
 	{
@@ -18,5 +17,4 @@ int print_to_98(int n)
 		for (; n >= 98; n--)
 			printf("%d, ", n);
 	_putchar('\n');
-	return (0);
 }
