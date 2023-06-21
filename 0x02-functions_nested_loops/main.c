@@ -1,11 +1,12 @@
 #include "main.h"
+
 /**
- * main - entry point
- * Return: returns 0 on success
+ * main - check the code for Holberton School students.
+ *
+ * Return: Always 0.
  */
 int main(void)
 {
-
-	print_alphabet();
+	print_to_98(111);
 	return (0);
 }
