@@ -8,12 +8,13 @@
 
 void print_array(int *a, int n)
 {
-	int m;
+	int m; /* helps with pointer arithemetic to navigate array */
 
-	if (n > 0 && !(n > (int)(sizeof(a))))
+	if (n > 0) /* checks if number of elements is valid */
 	{
 		for (m = 0; m < n; m++)
 		{
+			/* checks if current element is the last nth element */
 			if (*(a + m) == *(a + n - 1))
 				printf("%d\n", *(a + m));
 			else
