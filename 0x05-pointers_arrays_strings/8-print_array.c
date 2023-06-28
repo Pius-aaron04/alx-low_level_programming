@@ -10,11 +10,16 @@ void print_array(int *a, int n)
 {
 	int m;
 
-	for (m = 0; m < n; m++)
+	if (n > 0 && !(n > (int)(sizeof(a))))
 	{
-		if (*(a + m) == *(a + n - 1))
-			printf("%d\n", *(a + m));
-		else
-			printf("%d, ", *(a + m));
+		for (m = 0; m < n; m++)
+		{
+			if (*(a + m) == *(a + n - 1))
+				printf("%d\n", *(a + m));
+			else
+				printf("%d, ", *(a + m));
+		}
 	}
+	else
+		printf("\n");
 }

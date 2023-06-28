@@ -7,23 +7,14 @@
 
 void puts2(char *str)
 {
-	int l = 0;
-	char *s = str;
+	int l = 0; /* length of string */
 
 	while (*str != '\0')
 	{
-		l++;
-		str++;
-	}
-	str = s;
-	while (l >= 0)
-	{
-		if ((l % 2) == 0)
-		{
+		if (l % 2 == 0) /* checks l for selective printing */
 			_putchar(*str);
-		}
-		str++;
-		l--;
+		str++; /* shifts point the next memory space */
+		l++;
 	}
 	_putchar('\n');
 }
