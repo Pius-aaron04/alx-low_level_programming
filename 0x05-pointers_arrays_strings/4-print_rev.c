@@ -2,16 +2,23 @@
 
 /**
  * print_rev - prints a string in reverse
- * @s: string
+ * @s: string to be reversed
  */
 
 void print_rev(char *s)
 {
-	int l = _strlen(s);
+	int length = 0;
 
-	while (l > 0)
+	while (*s != '\0')
 	{
-		_putchar(*(s + l));
-		l--;
+		length++;
+		s++;
 	}
+	while (length >= 0)
+	{
+		_putchar(*s);
+		length--;
+		s--;
+	}
+	_putchar('\n');
 }
