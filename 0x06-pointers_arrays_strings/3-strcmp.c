@@ -15,7 +15,6 @@ int _strcmp(char *s1, char *s2)
 		if (*t_s1 != *t_s2)
 		{
 			return (*t_s1 - *t_s2);
-			break;
 		}
 		t_s1++;
 		t_s2++;
