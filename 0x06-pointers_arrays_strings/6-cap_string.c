@@ -1,24 +1,4 @@
 /**
- * replace_tab - replaces tab with space
- * @c: char pointer
- */
-
-void replace_tab(char *c)
-{
-	if (*c == '\t')
-	{
-		*c = ' ';
-		c++;
-		if (*c >= 97 && *c <= 122)
-			c -= 32;
-		else
-			c++;
-	}
-}
-
-
-
-/**
  * cap_string - checks for word separator
  * @str: string to be capitalized
  * Return: pointer to s
@@ -37,8 +17,7 @@ char *cap_string(char *str)
 		{
 			if (*s == *sep)
 			{
-				replace_tab(s);
-				/* checks if current character is a whitespace */
+				s++;
 				if (*s == ' ' || *s == '\n')
 				{
 					s++;
