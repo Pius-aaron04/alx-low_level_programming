@@ -6,30 +6,21 @@
 
 char *leet(char *str)
 {
-	int l = 0;
-	int x;
 	char *c = str;
 
-	while (*str != 0)
+	for (; *str != '\0'; str++)
 	{
-		str++;
-		l++;
-	}
-	str = c;
+		if (*str == 'a' || *str == 'A')
+			*str = '4';
 
-	for (x = 0; x <= l; x++)
-	{
-		if (str[x] == 'a' || str[x] == 'A')
-			str[x] = '4';
-
-		if (str[x] == 'e' || str[x] == 'E')
-			str[x] = '3';
-		if (str[x] == 'o' || str[x] == 'O')
-			str[x] = '0';
-		if (str[x] == 't' || str[x] == 'T')
-			str[x] = '7';
-		if (str[x] == 'l' || str[x] == 'L')
-			str[x] = '1';
+		if (*str == 'e' || *str == 'E')
+			*str = '3';
+		if (*str == 'o' || *str == 'O')
+			*str = '0';
+		if (*str == 't' || *str == 'T')
+			*str = '7';
+		if (*str == 'l' || *str == 'L')
+			*str = '1';
 	}
-	return (str);
+	return (c);
 }
