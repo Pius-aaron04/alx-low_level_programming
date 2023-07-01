@@ -10,10 +10,10 @@ char *_strncpy(char *dest, char *src, int n)
 {
 	int m;
 
-	/* copies char of src to dest provide conditions are true*/
-	for (m = 0; m <= n && src[m] != '\0'; m++)
+	/* copies character from src to dest provide conditions are true*/
+	for (m = 0; m < n && src[m] != '\0'; m++)
 		dest[m] = src[m];
-	/* put null value to positions after those from src*/
+	/* puts null value to positions after those from src*/
 	for (; m < n ; m++)
 		dest[m] = '\0';
 	return (dest);
