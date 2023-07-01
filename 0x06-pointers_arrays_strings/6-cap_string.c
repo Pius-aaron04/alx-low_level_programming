@@ -18,7 +18,7 @@ char *cap_string(char *str)
 			if (*s == *sep)
 			{
 				s++;
-				if (*s == ' ' || *s == '\n')
+				if (*s == ' ' || *s == '\n' || *s == '\t')
 				{
 					s++;
 					if (*s >= 'a' && *s <= 'z')
