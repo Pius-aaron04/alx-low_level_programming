@@ -11,6 +11,9 @@ char *_strncat(char *dest, char *src, int n)
 	char *p_dest = dest; /* points to the first element of dest.*/
 	int m;
 
+	if (*dest == 0 || *src == 0)
+		return (dest);
+
 	/* shifts the des to the end */
 	while (*dest != '\0')
 		dest++;
