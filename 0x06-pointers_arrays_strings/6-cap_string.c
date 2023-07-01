@@ -1,4 +1,15 @@
 /**
+ * change_toupper - changes case to upper
+ * @c: char pointer
+ */
+
+void change_toupper(char *c)
+{
+	if (*c >= 97 && *c <= 122)
+		*c -= 32;
+}
+
+/**
  * cap_string - checks for word separator
  * @str: string to be capitalized
  * Return: pointer to s
@@ -11,6 +22,7 @@ char *cap_string(char *str)
 	char *sep = separator;
 	char *s = str;
 
+	change_toupper(s);
 	while (*s != '\0')
 	{
 		for (sep = separator; *sep != '\0'; sep++)
@@ -21,17 +33,11 @@ char *cap_string(char *str)
 				if (*s == ' ' || *s == '\n' || *s == '\t')
 				{
 					s++;
-					if (*s >= 'a' && *s <= 'z')
-					{
-						*s -= 32;
-						break;
-					}
-				}
-				if ((*s >= 'a' && *s <= 'z') && (*(s - 1) == *sep))
-				{
-					*s -= 32;
+					change_toupper(s);
 					break;
 				}
+
+				change_toupper(s);
 			}
 		}
 		s++;
