@@ -6,21 +6,21 @@
 
 char *leet(char *str)
 {
-	char *c = str;
+	/* initialized three strings for mapping characters by index*/
+	char lower[] = "aeotl";
+	char upper[] = "AEOTL";
+	char code[] = "43071";
+	char *c = str; /* retains the pointer to first charcter of the string*/
+	int i; /* control iteration for elements in mapping arrays*/
 
-	for (; *str != '\0'; str++)
+	while (*str != 0)
 	{
-		if (*str == 'a' || *str == 'A')
-			*str = '4';
-
-		else if (*str == 'e' || *str == 'E')
-			*str = '3';
-		else if (*str == 'o' || *str == 'O')
-			*str = '0';
-		else if (*str == 't' || *str == 'T')
-			*str = '7';
-		else if (*str == 'l' || *str == 'L')
-			*str = '1';
+		for (i = 0; i < 5; i++)
+		{
+			if (*str == lower[i] || *str == upper[i])
+				*str = code[i];
+		}
+		str++;
 	}
 	return (c);
 }
