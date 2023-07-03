@@ -9,7 +9,8 @@ char *_strstr(char *haystack, char *needle)
 {
 	while (*haystack != 0)
 	{
-		if ((*haystack == *needle) && *(haystack + 1) == *(needle + 1))
+		if (((*haystack == *needle) && *(haystack + 1) == *(needle + 1))
+				|| (*haystack == *needle))
 			return (haystack);
 		haystack++;
 	}
