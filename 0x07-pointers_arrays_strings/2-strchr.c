@@ -1,3 +1,4 @@
+#include <stddef.h>
 /**
  * _strchr - locates first occurence of c in s
  * @s: String to be search
@@ -15,5 +16,5 @@ char *_strchr(char *s, char c)
 			return (temp);
 		temp++;
 	}
-	return (0);
+	return (NULL);
 }
