@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 /**
  * main - prints file name
  * @argc: number of arguments passed
@@ -8,6 +8,10 @@
 
 int main(int argc __attribute__((unused)), char *argv[])
 {
-	printf("%s\n", *argv);
+	char *name = *argv;
+
+	while(*name++)
+		_putchar(*name);
+	_putchar('\n');
 	return (0);
 }
