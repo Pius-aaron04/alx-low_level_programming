@@ -16,6 +16,6 @@ char *_strchr(char *s, char c)
 		temp++;
 	}
 	if (*temp == c)
-		return(temp);
+		return (temp);
 	return (((void *)0));
 }
