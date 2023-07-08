@@ -8,12 +8,12 @@
  * Return: 0 on success and 1 0n failure
  */
 
-int main(int argc, char *argv[3])
+int main(int argc __attribute__((unused)), char *argv[3])
 {
 	int product = 1;
 	int i;
 
-	for (i = 1; i < argc; i++)
+	for (i = 1; i < 3; i++)
 	{
 		if (*argv[i] >= '0' || *argv[i] <= '9')
 		{
