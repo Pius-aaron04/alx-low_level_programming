@@ -9,17 +9,22 @@
 
 char *_strdup(char *str)
 {
-	unsigned int l_str = strlen(str); /* length of string*/
+	unsigned int l_str = 0; /* length of string*/
 	char *copy;
 	unsigned int i = 0;
 
-	if ((str == NULL) || (strlen(str) == INT_MAX))
+	if (str == NULL || l_str >= INT_MAX)
 		return (NULL);
-	copy = (char *)malloc((sizeof(char) * l_str + 1));
-
+	while (*str)
+	{
+		l_str++;
+		str++;
+	}
+	str = (str - l_str);
+	copy = (char *)malloc((sizeof(char) * l_str) + 1);
 	while (1)
 	{
-		if (i == l_str)
+		if (i == l_str + 1)
 		{
 			copy[i] = '\0';
 			break;
