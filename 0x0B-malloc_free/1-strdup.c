@@ -13,7 +13,7 @@ char *_strdup(char *str)
 	char *copy;
 	unsigned int i = 0;
 
-	if (str == NULL || strlen(str) == INT_MAX)
+	if ((str == NULL) || (strlen(str) == INT_MAX))
 		return (NULL);
 	copy = (char *)malloc((sizeof(char) * l_str + 1));
 
