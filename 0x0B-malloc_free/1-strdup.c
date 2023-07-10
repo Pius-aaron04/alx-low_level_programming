@@ -1,3 +1,4 @@
+#include <limits.h>
 #include <stdlib.h>
 /**
  * _strdup - returns pointer to a copy of str
@@ -11,13 +12,13 @@ char *_strdup(char *str)
 	char *copy;
 	unsigned int i = 0;
 
-	if (str == NULL || *str == 0)
-		return (NULL);
 	while (*str)
 	{
 		l_str++;
 		str++;
 	}
+	if (str == NULL || l_str == INT_MAX)
+		return (NULL);
 	str = (str - l_str);
 	copy = (char *)malloc((sizeof(char) * l_str) + 1);
 
