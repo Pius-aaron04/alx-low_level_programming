@@ -11,13 +11,15 @@ char *_strdup(char *str)
 	char *copy;
 	unsigned int i = 0;
 
+	if (str == NULL)
+		return (NULL);
 	while (*str)
 	{
 		l_str++;
 		str++;
 	}
 	str = (str - l_str);
-	copy = (char *)malloc(sizeof(char) * l_str);
+	copy = (char *)malloc((sizeof(char) * l_str) + 1);
 
 	while (1)
 	{
