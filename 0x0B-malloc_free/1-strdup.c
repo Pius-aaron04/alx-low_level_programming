@@ -22,7 +22,7 @@ char *_strdup(char *str)
 	}
 	str = (str - l_str);
 	if (l_str >= INT_MAX)
-		return (NULL);
+		return (0);
 	copy = (char *)malloc((sizeof(char) * l_str) + 1);
 	while (1)
 	{
