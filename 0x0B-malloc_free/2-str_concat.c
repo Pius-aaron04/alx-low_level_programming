@@ -34,7 +34,7 @@ char *str_concat(char *s1, char *s2)
 	char *new_string;
 	unsigned int new_string_length;
 
-	/* checks and reassign strings is either of them is null*/ 
+	/* checks and reassign strings is either of them is null*/
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
@@ -46,10 +46,12 @@ char *str_concat(char *s1, char *s2)
 	l2 = get_length(s2);
 	new_string_length = l1 + l2;
 	new_string = (char *)malloc(sizeof(char) * (new_string_length + 1));
+	if (new_string == NULL)
+		return (NULL);
 
 	while (i < new_string_length)
 	{
-		if (!(*s1))	
+		if (!(*s1))
 			break;
 		new_string[i] = s1[i];
 		i++;
