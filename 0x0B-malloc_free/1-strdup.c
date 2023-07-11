@@ -13,7 +13,7 @@ char *_strdup(char *str)
 	char *copy;
 	unsigned int i = 0;
 
-	if (str == NULL || l_str >= INT_MAX)
+	if (str == NULL)
 		return (NULL);
 	while (*str)
 	{
@@ -21,10 +21,12 @@ char *_strdup(char *str)
 		str++;
 	}
 	str = (str - l_str);
-	copy = (char *)malloc((sizeof(char) * l_str) + 1);
+	if (l_str >= INT_MAX)
+		return (NULL);
+	copy = (char *)malloc((sizeof(char) * l_str) - 1);
 	while (1)
 	{
-		if (i == l_str + 1)
+		if (i == l_str - 1)
 		{
 			copy[i] = '\0';
 			break;
