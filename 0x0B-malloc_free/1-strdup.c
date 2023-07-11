@@ -23,10 +23,10 @@ char *_strdup(char *str)
 	str = (str - l_str);
 	if (l_str >= INT_MAX)
 		return (NULL);
-	copy = (char *)malloc((sizeof(char) * l_str) - 1);
+	copy = (char *)malloc((sizeof(char) * l_str) + 1);
 	while (1)
 	{
-		if (i == l_str - 1)
+		if (i == l_str + 1)
 		{
 			copy[i] = '\0';
 			break;
