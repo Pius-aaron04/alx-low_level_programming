@@ -15,9 +15,9 @@ char *create_array(unsigned int size, char c)
 
 	if (size == 0)
 		return (NULL);
-	if (size == INT_MAX)
-		return (0);
 	array = (char *)malloc(sizeof(char) * size);
+	if (array == NULL)
+		return (NULL);
 
 	while (1)
 	{

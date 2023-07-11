@@ -21,9 +21,10 @@ char *_strdup(char *str)
 		str++;
 	}
 	str = (str - l_str);
-	if (l_str >= CHAR_MAX)
+	/* Duplicates String */
+	copy = (char *)malloc((sizeof(char) * (l_str + 1)));
+	if (copy == NULL)
 		return (NULL);
-	copy = (char *)malloc((sizeof(char) * l_str) + 1);
 	while (1)
 	{
 		if (i == l_str + 1)
