@@ -13,7 +13,7 @@ int main(int argc __attribute__((unused)), char *argv[3])
 	int product = 1;
 	int i;
 
-	if (!(argc > 1) || (argc > 3))
+	if ((argc == 1) || (argc > 3))
 	{
 		printf("Error\n");
 		return (1);
