@@ -22,7 +22,7 @@ int main(int argc __attribute__((unused)), char *argv[3])
 	{
 		if (*argv[i] >= '0' || *argv[i] <= '9')
 		{
-			product *= atoi(argv[i]);
+			product *= strtol(argv[i], 0, 10);
 		}
 		else
 		{
