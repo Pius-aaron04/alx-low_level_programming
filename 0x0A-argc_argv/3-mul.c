@@ -18,7 +18,7 @@ int main(int argc __attribute__((unused)), char *argv[3])
 		printf("Error\n");
 		return (1);
 	}
-	for (i = 1; i < 3; i++)
+	for (i = 1; i < argc; i++)
 	{
 		if (*argv[i] >= '0' || *argv[i] <= '9')
 		{
