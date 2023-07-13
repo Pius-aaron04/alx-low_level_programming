@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <string.h>
 /**
  * _calloc - allocates memory for n bytes for members of
  * array
@@ -13,8 +14,10 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
-	memory = malloc(nmemb * size);
+	memory = (int *)malloc(nmemb * size);
 	if (memory == NULL)
 		return (NULL);
+
+	memset(memory, 0, nmemb * size);
 	return (memory);
 }
