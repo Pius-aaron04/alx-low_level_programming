@@ -8,7 +8,7 @@
 
 void free_dog(dog_t *d)
 {
-	if (dog_t == NULL)
+	if (d == NULL)
 		free(d);
 	else
 	{
