@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "dog.h"
-#include <stddef.h>
+#include <stdlib.h>
 /**
  * print_dog - displays info of dog structure
  * @d: dog structure
@@ -22,6 +22,6 @@ void print_dog(struct dog *d)
 		printf("Owner: %s\n", d->owner);
 	}
 	else
-		exit(1)
+		exit(1);
 }
 
