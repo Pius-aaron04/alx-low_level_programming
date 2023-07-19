@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	if (argc != 4)
 	{
 		printf("Error\n");
-		exit(1);
+		return (1);
 	}
 	/* converts strings */
 	num1 = atoi(argv[1]);
@@ -32,5 +32,5 @@ int main(int argc, char *argv[])
 	}
 
 	printf("Error\n");
-	exit(1);
+	return (1);
 }
