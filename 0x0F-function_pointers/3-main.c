@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
+	/* checks opearator entered if more than 1 */
 	if (strlen(argv[2]) > 1)
 	{
 		printf("Error\n");
@@ -28,13 +29,13 @@ int main(int argc, char *argv[])
 	num2 = atoi(argv[3]);
 	/* initializes the pointer to operator function */
 	op_ptr = get_op_func(argv[2]);
-	/* checks for valid pointer */
+	/* checks for valid operation */
 	if (op_ptr != NULL)
 	{
 		result = op_ptr(num1, num2);
-		return (result);
+		exit(result);
 	}
 
 	printf("Error\n");
-	exit(0);
+	exit(99);
 }
