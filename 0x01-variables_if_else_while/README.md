@@ -1,5 +1,1 @@
-C programming basics:
--> Variables 
--> if 
--> if else
--> while
+Variadic Functions Tasks
