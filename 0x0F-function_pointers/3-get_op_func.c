@@ -19,7 +19,7 @@ int (*get_op_func(char *s))(int a, int b)
 
 	while (i < 5)
 	{
-		if (*s == *(ops[i].symbol))
+		if (*s == *(ops[i].symbol) || s != NULL)
 			return (ops[i].op);
 		i++;
 	}
