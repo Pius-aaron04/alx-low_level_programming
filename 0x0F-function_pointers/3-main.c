@@ -16,7 +16,12 @@ int main(int argc, char *argv[])
 	if (argc != 4)
 	{
 		printf("Error\n");
-		exit(98);
+		return (98);
+	}
+	if (strlen(argv[2]) > 1)
+	{
+		printf("Error\n");
+		return (99);
 	}
 	/* converts strings */
 	num1 = atoi(argv[1]);
@@ -27,7 +32,6 @@ int main(int argc, char *argv[])
 	if (op_ptr != NULL)
 	{
 		result = op_ptr(num1, num2);
-		printf("%d\n", result);
 		return (result);
 	}
 

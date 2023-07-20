@@ -17,8 +17,6 @@ int (*get_op_func(char *s))(int a, int b)
 	};
 	int i = 0;
 
-	if (strlen(s) > 1)
-		return (NULL);
 	while (i < 5)
 	{
 		if (*s == *(ops[i].symbol))
