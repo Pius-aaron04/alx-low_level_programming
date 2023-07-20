@@ -10,7 +10,7 @@
 int main(int argc, char *argv[])
 {
 	int (*op_ptr)(int, int); /* operator pointer */
-	long int result, num1, num2;
+	int result, num1, num2;
 
 	/* checks the amount of arguments entered */
 	if (argc != 4)
@@ -26,8 +26,8 @@ int main(int argc, char *argv[])
 	/* checks for valid pointer */
 	if (op_ptr != NULL)
 	{
-		result = (long int)op_ptr(num1, num2);
-		printf("%lu\n", result);
+		result = op_ptr(num1, num2);
+		printf("%d\n", result);
 		return (result);
 	}
 
