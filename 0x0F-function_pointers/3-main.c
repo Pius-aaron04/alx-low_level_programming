@@ -10,19 +10,19 @@
 int main(int argc, char *argv[])
 {
 	int (*op_ptr)(int, int); /* operator pointer */
-	int result, num1, num2;
+	int num1, num2;
 
 	/* checks the amount of arguments entered */
 	if (argc != 4)
 	{
 		printf("Error\n");
-		exit(98);
+		return (98);
 	}
 	/* checks opearator entered if more than 1 */
 	if (strlen(argv[2]) > 1)
 	{
 		printf("Error\n");
-		exit(99);
+		return (99);
 	}
 	/* converts strings */
 	num1 = atoi(argv[1]);
@@ -32,10 +32,10 @@ int main(int argc, char *argv[])
 	/* checks for valid operation */
 	if (op_ptr != NULL)
 	{
-		result = op_ptr(num1, num2);
-		exit(result);
+		op_ptr(num1, num2);
+		return (0);
 	}
 
 	printf("Error\n");
-	exit(99);
+	return (99);
 }
