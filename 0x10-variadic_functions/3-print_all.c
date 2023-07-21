@@ -34,10 +34,12 @@ void print_all(const char * const format, ...)
 			default:
 				format_found = 0;
 		}
-		if (va_arg(inputs, char *) == NULL)
+		/*
+		 * if (va_arg(inputs, char *) == NULL)
 			printf("nil");
-		/*if (i != (int)strlen(format) - 1 && (format_found))
-			printf(", ");*/
+		 */
+		if (i != (int)strlen(format) - 1 && (format_found))
+			printf(", ");
 		i++;
 	}
 	printf("\n");
