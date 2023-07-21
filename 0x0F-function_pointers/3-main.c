@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 	if (op_ptr != NULL)
 	{
 		op_ptr(num1, num2);
-		return (0);
+		return (op_ptr(num1, num2);
 	}
 
 	printf("Error\n");
