@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 	/* checks for valid operation */
 	if (op_ptr != NULL)
 	{
-		return(op_ptr(num1, num2));
+		return (op_ptr(num1, num2));
 	}
 
 	printf("Error\n");
