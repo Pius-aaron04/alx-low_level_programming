@@ -9,6 +9,7 @@ void print_all(const char * const format, ...)
 {
 	int i = 0, format_found = 0;
 	va_list inputs;
+	char *s;
 
 	va_start(inputs, format);
 	while (i < (int)strlen(format))
@@ -20,7 +21,10 @@ void print_all(const char * const format, ...)
 				format_found = 1;
 				break;
 			case 's':
-				printf("%s", va_arg(inputs, char *));
+				s = va_arg(inputs, char *);
+				if (s == NULL)
+					s = "nil";
+				printf("%s", s);
 				format_found = 1;
 				break;
 			case 'i':
@@ -34,10 +38,6 @@ void print_all(const char * const format, ...)
 			default:
 				format_found = 0;
 		}
-		/*
-		 * if (va_arg(inputs, char *) == NULL)
-			printf("nil");
-		 */
 		if (i != (int)strlen(format) - 1 && (format_found))
 			printf(", ");
 		i++;
