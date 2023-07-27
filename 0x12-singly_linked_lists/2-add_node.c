@@ -4,7 +4,7 @@
 /**
  * add_node - adds a node to the beginning
  * @head: head of list
- * @string: string value of new node
+ * @str: string value of new node
  * Return: pointer first node of the list
  */
 
