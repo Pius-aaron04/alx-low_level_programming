@@ -9,9 +9,7 @@ _start:
 	mov ebx, 1	; file descriptor (stdout)
 	mov ecx, hello	; string data
 	mov edx, 17	; string length
-	int 0x80	; Interrupt to invoke function call
 
 	; Program exit
 	mov eax, 1	; system call number for sys_exit (1)
 	xor ebx, ebx	; exit status (0)
-	int 0x80	; interrupts for system calls
