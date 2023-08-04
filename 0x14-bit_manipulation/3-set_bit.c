@@ -1,3 +1,4 @@
+#include <limits.h>
 #include "main.h"
 
 /**
@@ -9,11 +10,12 @@
 
 int set_bit(unsigned long int *n, unsigned int index)
 {
+	if (*n > ULONG_MAX)
+		return (-1);
 	if ((*n & (1 << index)) == 0)
 	{
 		*n = *n | (1 << index);
 		return (1);
 	}
-	else
-		return (-1);
+	return (1);
 }
