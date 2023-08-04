@@ -57,7 +57,7 @@ unsigned int binary_to_uint(const char *b)
 	int j = 0, i;
 
 	/* validates binary value entered */
-	if (b == NULL || validate(b) == 0)
+	if (b == NULL || validate(b) == 0 || *b == '\0')
 		return (0);
 	/* allocates memory for buffer */
 	if (strlen(b) == 1 && b[0] == 48)
