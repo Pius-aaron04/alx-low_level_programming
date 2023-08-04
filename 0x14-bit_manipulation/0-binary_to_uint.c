@@ -33,7 +33,7 @@ int validate(const char *s)
 {
 	int l = 0;
 
-	while (l < (int)strlen(s) - 1)
+	while (l < (int)strlen(s))
 	{
 		if (s[l] == 48 || s[l] == 49)
 			++l;
