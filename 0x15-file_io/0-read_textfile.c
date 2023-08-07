@@ -27,7 +27,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	if (file == -1 || buffer == NULL)
 		return (0);
-	memset((void *)buffer, 0, letters + 1);
 
 	/* gets character and store in buffer */
 	i = read(file, buffer, letters);
@@ -35,9 +34,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	buffer[i] = '\0';
 	ret_val = write(1, buffer, i);
-	free(buffer);
-	close(file);
 	if (ret_val == -1)
 		return (0);
+	free(buffer);
+	close(file);
 	return (ret_val);
 }
