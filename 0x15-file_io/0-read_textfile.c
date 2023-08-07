@@ -20,7 +20,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	size_t i = 0;
 	ssize_t ret_val;
 
-	if (filename == NULL || *filename == '\0')
+	if (filename == NULL || *filename == '\0' || letters == 0)
 		return (0);
 	file = fopen(filename, "r");
 	/** checks allocattion and file access */
@@ -37,7 +37,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		buffer[i] = c;
 		i++;
 	}
-	ret_val = write(1, buffer, ++i);
+	ret_val = write(1, buffer, i);
 	free(buffer);
 	fclose(file);
 	if (ret_val == -1)
