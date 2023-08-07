@@ -22,12 +22,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (filename == NULL)
 		return (0);
 	file = open(filename, O_RDONLY);
-	/** checks allocattion and file access */
-	buffer = malloc((sizeof(char) * letters) + 1);
+	/** checks file access */
 
-	if (file == -1 || buffer == NULL)
+	if (file == -1)
 		return (0);
 
+	buffer = malloc((sizeof(char) * letters) + 1);
+	if (buffer == NULL)
+		return (0);
 	/* gets character and store in buffer */
 	i = read(file, buffer, letters);
 	if (i == -1)
