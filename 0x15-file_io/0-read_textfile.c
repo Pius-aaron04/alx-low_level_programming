@@ -14,32 +14,29 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	FILE *file;
+	int file;
 	char *buffer;
-	char c;
-	size_t i = 0;
+	int i;
 	ssize_t ret_val;
 
-	if (filename == NULL || *filename == '\0' || letters == 0)
+	if (filename == NULL)
 		return (0);
-	file = fopen(filename, "r");
+	file = open(filename, O_RDONLY);
 	/** checks allocattion and file access */
 	buffer = malloc((sizeof(char) * letters) + 1);
-	if (file == NULL || buffer == NULL)
+
+	if (file == -1 || buffer == NULL)
 		return (0);
 	memset((void *)buffer, 0, letters + 1);
 
 	/* gets character and store in buffer */
-	while ((c = fgetc(file)) != EOF)
-	{
-		if (i == letters)
-			break;
-		buffer[i] = c;
-		i++;
-	}
+	i = read(file, buffer, letters);
+	if (i == -1)
+		return (0);
+	buffer[i] = '\0';
 	ret_val = write(1, buffer, i);
 	free(buffer);
-	fclose(file);
+	close(file);
 	if (ret_val == -1)
 		return (0);
 	return (ret_val);
