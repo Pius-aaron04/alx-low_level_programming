@@ -16,7 +16,7 @@ ssize_t openAndCheckErr(ssize_t *src, ssize_t *dest, char *src_n, char *dest_n)
 	*src = open(src_n, O_RDONLY);
 	if (*src == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: can't read from file %s\n", src_n);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src_n);
 		return (98);
 	}
 
@@ -26,7 +26,7 @@ ssize_t openAndCheckErr(ssize_t *src, ssize_t *dest, char *src_n, char *dest_n)
 		*dest = open(dest_n, O_RDWR | O_APPEND | O_CREAT, 00664);
 		if (*dest == -1)
 		{
-			dprintf(STDERR_FILENO, "Can't write to %s\n", dest_n);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest_n);
 			return (99);
 		}
 	}
@@ -57,14 +57,14 @@ int main(int ac, char **argv)
 	if (buffer == NULL)
 	{
 		exit(99);
-		dprintf(STDERR_FILENO, "Error: can't write to %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[1]);
 	}
 	while ((bytes_read = read(file_from, buffer, 1024)) > 0)
 	{
 		if ((write(file_to, buffer, bytes_read)) == -1 || bytes_read == -1)
 		{
 			free(buffer);
-			dprintf(STDERR_FILENO, "Error: can't write to %s\n", argv[1]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[1]);
 			exit(99);
 		}
 	}
