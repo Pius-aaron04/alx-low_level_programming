@@ -50,13 +50,13 @@ char *dest_n)
 
 	while ((r = read(src, buffer, 1024)) > 0)
 	{
-		if (r == 0)
+		if (r == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from %s\n", src_n);
 			return (98);
 		}
 		w = write(dest, buffer, r);
-		if (w == -1)
+		if (w < r)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest_n);
 			return (99);
