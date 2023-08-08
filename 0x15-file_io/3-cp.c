@@ -34,6 +34,38 @@ ssize_t openAndCheckErr(ssize_t *src, ssize_t *dest, char *src_n, char *dest_n)
 }
 
 /**
+* readWrite - read from a file and writes to another
+* @src: file to read from;
+* @dest: file to write;
+* @buffer: temporal storage
+* @src_n: source file name
+* @dest_n: destination file name
+* Return: status code
+*/
+
+ssize_t readWrite(ssize_t src, ssize_t dest, char *buffer, char *src_n,
+char *dest_n)
+{
+	ssize_t r, w;
+
+	while ((r = read(src, buffer, 1024)) > 0)
+	{
+		if (r == 0)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read %s\n", src_n);
+			return (98);
+		}
+		w = write(dest, buffer, r);
+		if (w == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write %s\n", dest_n);
+			return (99);
+		}
+	}
+	return (0);
+}
+
+/**
  * main - cp content from a file to another file
  * @ac: number of arguments entered at CLI
  * @argv: array of strings
@@ -42,7 +74,7 @@ ssize_t openAndCheckErr(ssize_t *src, ssize_t *dest, char *src_n, char *dest_n)
 
 int main(int ac, char **argv)
 {
-	ssize_t file_from, file_to, bytes_read, o;
+	ssize_t file_from, file_to, c, o;
 	char *buffer;
 
 	if (ac != 3)
@@ -59,15 +91,9 @@ int main(int ac, char **argv)
 		exit(99);
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[1]);
 	}
-	while ((bytes_read = read(file_from, buffer, 1024)) > 0)
-	{
-		if ((write(file_to, buffer, bytes_read)) == -1 || bytes_read == 0)
-		{
-			free(buffer);
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[1]);
-			exit(99);
-		}
-	}
+	c = readWrite(file_from, file_to, buffer, argv[1], argv[2]);
+	if (c != 0)
+		exit(c);
 	if (close(file_from) == -1)
 	{
 		free(buffer);
