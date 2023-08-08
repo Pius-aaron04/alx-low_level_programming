@@ -52,7 +52,7 @@ char *dest_n)
 	{
 		if (r == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from %s\n", src_n);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src_n);
 			return (98);
 		}
 		w = write(dest, buffer, r);
