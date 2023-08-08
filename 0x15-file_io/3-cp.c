@@ -42,7 +42,7 @@ ssize_t openAndCheckErr(ssize_t *src, ssize_t *dest, char *src_n, char *dest_n)
 
 int main(int ac, char **argv)
 {
-	ssize_t file_from, file_to, bytes_read, w, o;
+	ssize_t file_from, file_to, bytes_read, o;
 	char *buffer;
 
 	if (ac != 3)
