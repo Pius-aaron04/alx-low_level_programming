@@ -52,13 +52,13 @@ char *dest_n)
 	{
 		if (r == 0)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read %s\n", src_n);
+			dprintf(STDERR_FILENO, "Error: Can't read from %s\n", src_n);
 			return (98);
 		}
 		w = write(dest, buffer, r);
 		if (w == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write %s\n", dest_n);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest_n);
 			return (99);
 		}
 	}
@@ -79,7 +79,7 @@ int main(int ac, char **argv)
 
 	if (ac != 3)
 	{
-		perror("Usage: cp file_from file_to");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	o = openAndCheckErr(&file_from, &file_to, argv[1], argv[2]);
