@@ -61,7 +61,7 @@ int main(int ac, char **argv)
 	}
 	while ((bytes_read = read(file_from, buffer, 1024)) > 0)
 	{
-		if ((write(file_to, buffer, bytes_read)) == -1 || bytes_read == -1)
+		if ((write(file_to, buffer, bytes_read)) == -1 || bytes_read == 0)
 		{
 			free(buffer);
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[1]);
