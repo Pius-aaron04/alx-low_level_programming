@@ -1,3 +1,5 @@
+#include "main.h"
+#include <stdlib.h>
 /**
  * _strstr - locates the first matching substring of accept in str
  * @haystack: string to be searched
