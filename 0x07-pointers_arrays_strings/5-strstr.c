@@ -10,7 +10,7 @@
 char *_strstr(char *haystack, char *needle)
 {
 	if (haystack == NULL || *needle == '\0')
-		return ("nil");
+		return (haystack);
 	while (*haystack != 0)
 	{
 		if ((*haystack == *needle) && *(haystack + 1) == *(needle + 1))
