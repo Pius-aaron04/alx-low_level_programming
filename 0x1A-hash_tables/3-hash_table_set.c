@@ -29,7 +29,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (ht->array[index] == NULL)
 		ht->array[index] = new_node;
 	else if (strcmp(key, ht->array[index]->key) == 0)
-		strcpy(ht->array[index]->value, value);
+	{
+
+		free(ht->array[index]->value);
+		free(new_node->key);
+		free(new_node->value);
+		free(new_node);
+		ht->array[index]->value = strdup(value);
+		if (!ht->array[index]->value)
+			return (0);
+	}
 	else
 	{
 		new_node->next = ht->array[index];
