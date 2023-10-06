@@ -30,8 +30,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[index] = new_node;
 	else
 	{
-		new_node->next = ht->array[index];
-		ht->array[index] = new_node;
+		if (strcmp(key, ht->array[index]->key) == 0)
+			strcpy(ht->array[index]->value, value);
+		else
+		{
+			new_node->next = ht->array[index];8
+			ht->array[index] = new_node;
+		}
 	}
 	return (1);
 }
