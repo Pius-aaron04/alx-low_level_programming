@@ -23,15 +23,18 @@ void hash_table_print(const hash_table_t *ht)
 		pair = ht->array[i];
 		while (pair)
 		{
-			if (first_element)
-				printf(", ");
-			else
-				first_element = 1;
-			printf("'%s': ", pair->key);
-			if (strlen(pair->value) == 0)
-				printf("nil");
-			else
-				printf("'%s'", pair->value);
+			if (pair->key || pair->value)
+			{
+				if (first_element)
+					printf(", ");
+				else
+					first_element = 1;
+				printf("'%s': ", pair->key);
+				if (strlen(pair->value) == 0)
+					printf("nil");
+				else
+					printf("'%s'", pair->value);
+			}
 			pair = pair->next;
 		}
 	}
