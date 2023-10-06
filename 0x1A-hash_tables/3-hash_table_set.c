@@ -24,7 +24,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new_node->next = NULL;
 	if ((new_node->value == NULL) || (new_node->value == NULL))
 		return (0);
-	index = key_index((const unsigned char *)key, 1024);
+	index = key_index((const unsigned char *)key, ht->size);
 
 	if (ht->array[index] != NULL)
 		ht->array[index] = new_node;
