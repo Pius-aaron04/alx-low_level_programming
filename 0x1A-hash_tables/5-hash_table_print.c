@@ -27,7 +27,11 @@ void hash_table_print(const hash_table_t *ht)
 				printf(", ");
 			else
 				first_element = 1;
-			printf("'%s': '%s'", pair->key, pair->value);
+			printf("'%s': ", pair->key);
+			if (strlen(pair->value) == 0)
+				printf("'nil'");
+			else
+				printf("'%s'", pair->value);
 			pair = pair->next;
 		}
 	}
