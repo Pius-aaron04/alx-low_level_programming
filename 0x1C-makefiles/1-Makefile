@@ -1,0 +1,8 @@
+# _*_ MakeFile _*_
+CC := gcc
+SRC := *.c
+
+school: *.c m.h
+	$(CC) $(SRC) -o school
+
+all: school
