@@ -1,11 +1,11 @@
 # _*_ MakeFile _*_
 
 CC = gcc
-NAME = school 
 SRC = main.c school.c
+NAME = school
 
 $(OBJ): $(SRC)
-	$(CC) -c -o $(OBJ) $(SRC)
+	$(CC) -c -o $(SRC) $(OBJ)
 
 OBJ = $(SRC:%.c=%.o)
 
