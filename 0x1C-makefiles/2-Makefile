@@ -8,7 +8,7 @@ NAME = school
 ${OBJ}: ${SRC} m.h
 	${CC} -c -o ${OBJ} ${SRC}
 
-OBJ = $(SRC:%.c=%.o)
+OBJ = school.o main.o
 
 all: $(OBJ)
 	${CC} ${OBJ} -o $(NAME)
