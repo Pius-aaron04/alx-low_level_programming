@@ -53,6 +53,7 @@ int binary(int *array, size_t start, size_t end, int value)
  * @array: pointer to the first element of the array
  * @size: size of the array
  * @value: value/integer to search for
+ * Return: index to the value if found else -1
  */
 
 int exponential_search(int *array, size_t size, int value)

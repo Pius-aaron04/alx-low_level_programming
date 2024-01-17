@@ -35,12 +35,11 @@ int binary_search(int *array, size_t size, int value)
 	size_t hb = size - 1;
 	size_t mid;
 
-	mid = hb / 2;
-
 	if (!array)
 		return (-1);
-	while (lb < hb)
+	while (lb <= hb)
 	{
+		mid = (hb + lb + 1) / 2;
 		printf("Searching in array: ");
 		print_array(array, lb, hb);
 		if (array[mid] == value)
@@ -49,11 +48,6 @@ int binary_search(int *array, size_t size, int value)
 			hb = mid - 1;
 		else if (value > array[mid])
 			lb = mid + 1;
-		mid = (hb + lb + 1) / 2;
 	}
-	printf("Searching in array: ");
-	print_array(array, lb, hb);
-	if (array[mid] == value)
-		return (1);
 	return (-1);
 }

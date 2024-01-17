@@ -17,6 +17,8 @@ int interpolation_search(int *array, size_t size, int value)
 	hb = size - 1;
 	lb = 0;
 
+	if (!array)
+		return (-1);
 	while (lb <= hb)
 	{
 		pos = lb + (((double)(hb - lb) / (array[hb] - array[lb])) *
