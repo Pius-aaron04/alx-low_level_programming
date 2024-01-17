@@ -33,32 +33,23 @@ int binary_search(int *array, size_t size, int value)
 {
 	size_t lb = 0;
 	size_t hb = size - 1;
-	size_t mid = (lb + hb) / 2;
+	size_t mid;
+
+	mid = hb / 2;
 
 	if (!array)
 		return (-1);
-	while (lb != hb)
+	while (lb < hb)
 	{
 		printf("Searching in array: ");
 		print_array(array, lb, hb);
 		if (array[mid] == value)
 			return (mid);
 		else if (value < array[mid])
-		{
-			hb = mid;
-			if ((hb + lb) % 2 == 1)
-				mid = (hb + lb + 1) / 2;
-			else
-				mid = (hb + lb) / 2;
-		}
+			hb = mid - 1;
 		else if (value > array[mid])
-		{
-			lb = mid;
-			if ((hb + lb) % 2 == 1)
-				mid = (hb + lb + 1) / 2;
-			else
-				mid = (hb + lb) / 2;
-		}
+			lb = mid + 1;
+		mid = (hb + lb + 1) / 2;
 	}
 	printf("Searching in array: ");
 	print_array(array, lb, hb);
