@@ -39,7 +39,7 @@ int binary_search(int *array, size_t size, int value)
 		return (-1);
 	while (lb <= hb)
 	{
-		mid = (hb + lb + 1) / 2;
+		mid = (hb + lb) / 2;
 		printf("Searching in array: ");
 		print_array(array, lb, hb);
 		if (array[mid] == value)
