@@ -35,7 +35,6 @@ int binary(int *array, size_t start, size_t end, int value)
 		else if (value > array[mid])
 			start = mid + 1;
 	}
-	printf("Searching in array: ");
 	return (-1);
 }
 
