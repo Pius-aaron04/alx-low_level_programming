@@ -16,9 +16,9 @@ int binary(int *array, size_t start, size_t end, int value)
 
 	if (!array)
 		return (-1);
-	while (start < end)
+	while (start <= end)
 	{
-		mid = (end + start + 1) / 2;
+		mid = (end + start) / 2;
 
 		printf("Searching in array: ");
 		for (i = start; i <= end; i++)
@@ -31,20 +31,11 @@ int binary(int *array, size_t start, size_t end, int value)
 		if (array[mid] == value)
 			return (mid);
 		else if (value < array[mid])
-			end = mid;
+			end = mid - 1;
 		else if (value > array[mid])
-			start = mid;
+			start = mid + 1;
 	}
 	printf("Searching in array: ");
-	for (i = start; i <= end; i++)
-	{
-		if (i != end)
-			printf("%d, ", array[i]);
-		else
-			printf("%d\n", array[i]);
-	}
-	if (array[mid] == value)
-		return (1);
 	return (-1);
 }
 
